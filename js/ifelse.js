@@ -4,7 +4,7 @@
 
 var calcu = function (calcValue) {
     if (calcValue) {
-		// calcValue wasn't null or undefined'  
+        // calcValue wasn't null or undefined'
         if (calcValue === 'c') {
             calc.reset();
         } else if (calcValue === 'equate') {
@@ -12,7 +12,7 @@ var calcu = function (calcValue) {
         } else {
             calc.output.value += calcValue;
         }
-	}
+    }
 };
 
 // Bind onclick events below here and don't use window.onload.
@@ -26,10 +26,8 @@ var inputs = document.getElementsByTagName("input");
 
 for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].type === "button") {
-        //console.log(inputs[i].id);
         inputs[i].onclick = function(event){
             calcu(this.id);
         };
-        //console.log(inputs[i].onclick); 
     }
 };
