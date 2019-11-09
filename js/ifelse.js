@@ -3,11 +3,15 @@
 // CS22A: A Basic Calculator Part 3 - calcu() function with if-else
 
 var calcu = function (calcValue) {
-	if (calcValue) {
-		// calcValue wasn't null or undefined'
-
-		// Add missing code here
-		
+    if (calcValue) {
+		// calcValue wasn't null or undefined'  
+        if (calcValue === 'c') {
+            calc.reset();
+        } else if (calcValue === 'equate') {
+            calc.output.value = math.eval(calc.output.value);
+        } else {
+            calc.output.value += calcValue;
+        }
 	}
 };
 
@@ -17,3 +21,15 @@ var calcu = function (calcValue) {
 // script tag for ifelse.js is near the bottom of the
 // ABasicCalculator-switch.html page and there are no big images to
 // slow the loading of the HTML elements down it will all work OK without that.
+
+var inputs = document.getElementsByTagName("input");
+
+for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].type === "button") {
+        //console.log(inputs[i].id);
+        inputs[i].onclick = function(event){
+            calcu(this.id);
+        };
+        //console.log(inputs[i].onclick); 
+    }
+};

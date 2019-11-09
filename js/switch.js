@@ -12,12 +12,34 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 var calcu = function (calcValue) {
-  switch (calcValue) {
-// Add missing code here
-  case "equate":
-    // use the math.eval() function from the Math.js math library to parse and evaluate the String with mathematics in it
-    calc.output.value = math.eval(calc.output.value);
-    break;
-  }
+	switch (calcValue.trim()) {
+	// Add missing code here
+	case "1":
+	case "2":
+    case "3":
+	case "4":
+	case "5":
+	case "6":
+    case "7":
+	case "8":
+    case "9":
+    case "0":
+    case "+":
+	case "-":
+		calc.output.value = calc.output.value += calcValue.trim();
+		break;
+    case "x":
+		calc.output.value = calc.output.value += "*";
+		break;
+    case "divide":
+		calc.output.value = calc.output.value += "/";
+		break;
+    case "C":
+        calc.reset();
+		break;
+	case "=":
+		// use the math.eval() function from the Math.js math library to parse and evaluate the String with mathematics in it
+		calc.output.value = math.eval(calc.output.value);
+		break;
+	}
 };
-
