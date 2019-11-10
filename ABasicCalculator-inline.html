@@ -43,11 +43,11 @@
 				<input type="button" id="9" value="  9  " onclick="calc.output.value += this.id">
 				<input type="button" id="*" value="  x  " onclick="calc.output.value += this.id">
 				<br>
-				<input type="button" id="c" value="  C  " onclick="calc.output.value = ''">
+				<input type="button" id="c" value="  C  " onclick="calc.reset();">
 				<input type="button" id="0" value="  0  " onclick="calc.output.value += this.id">
 					
 				<!-- Use the math.eval() function from the Math.js math library to parse and evaluate the String with mathematics in it -->
-				<input type="button" id="equate" value="  =  " onclick="setOutput();">
+				<input type="button" id="equate" value="  =  " onclick="calc.output.value=math.eval(calc.output.value);">
 				<input type="button" id="/" value="&divide;" onclick="calc.output.value += this.id">
 			</form>
 		</div>
@@ -57,11 +57,5 @@
 	<script src="js/vendor/math.js"></script>
 	<!-- test spec files -->
 	<script src="js/test/inlineSpec.js"></script>
-
-	<script type="text/javascript">
-		var setOutput = function () {
-			calc.output.value = math.eval(calc.output.value);
-		};
-	</script>
 </body>
 </html>
