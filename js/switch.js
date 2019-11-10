@@ -12,7 +12,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 var calcu = function (calcValue) {
-    switch (calcValue.trim()) {
+    switch (calcValue.trim()) { //trims whitespaces passed from value field
         case "1":
         case "2":
         case "3":
@@ -34,7 +34,7 @@ var calcu = function (calcValue) {
             calc.output.value = calc.output.value += "/";
             break;
         case "C":
-            calc.reset();
+            calc.reset();  //clears the output
             break;
         case "=":
         calc.output.value = math.eval(calc.output.value);

@@ -5,11 +5,11 @@
 var calcu = function (calcValue) {
     if (calcValue) {
         // calcValue wasn't null or undefined'
-        if (calcValue === 'c') {
+        if (calcValue === 'c') {    // clear button resets the output
             calc.reset();
-        } else if (calcValue === 'equate') {
+        } else if (calcValue === 'equate') {    // equate button calls math.eval()
             calc.output.value = math.eval(calc.output.value);
-        } else {
+        } else {    // all other buttons add to output
             calc.output.value += calcValue;
         }
     }
@@ -22,10 +22,10 @@ var calcu = function (calcValue) {
 // ABasicCalculator-switch.html page and there are no big images to
 // slow the loading of the HTML elements down it will all work OK without that.
 
-var inputs = document.getElementsByTagName("input");
+var inputs = document.getElementsByTagName("input"); //all input fields selected
 
 for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].type === "button") {
+    if (inputs[i].type === "button") {  //olny buttons picked
         inputs[i].onclick = function(event){
             calcu(this.id);
         };
