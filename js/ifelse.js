@@ -24,10 +24,13 @@ var calcu = function (calcValue) {
 
 var inputs = document.getElementsByTagName("input"); //all input fields selected
 
+// fuction that passes button id to the calcu function
+var onclickFunc = function(event) {
+    calcu(this.id);
+};
+
 for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].type === "button") {  //olny buttons picked
-        inputs[i].onclick = function(event){
-            calcu(this.id);
-        };
+        inputs[i].onclick = onclickFunc;  //buttons binded with onclick function
     }
-};
+}
