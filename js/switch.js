@@ -25,19 +25,19 @@ var calcu = function (calcValue) {
         case "0":
         case "+":
         case "-":
-            calc.output.value = calc.output.value += calcValue.trim();
+            calc.output.value += calcValue.trim();
             break;
         case "x":
-            calc.output.value = calc.output.value += "*";
+            calc.output.value += "*";
             break;
         case "divide":
-            calc.output.value = calc.output.value += "/";
+            calc.output.value += "/";
             break;
         case "C":
             calc.reset();  //clears the output
             break;
         case "=":
-        calc.output.value = math.eval(calc.output.value);
-        break;
+            calc.output.value = math.eval(calc.output.value);
+            break;
     }
 };
