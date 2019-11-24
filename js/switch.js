@@ -13,31 +13,24 @@
 
 var calcu = function (calcValue) {
     switch (calcValue.trim()) { //trims whitespaces passed from value field
-        case "1":
-        case "2":
-        case "3":
-        case "4":
-        case "5":
-        case "6":
-        case "7":
-        case "8":
-        case "9":
-        case "0":
         case "+":
         case "-":
-            calc.output.value += calcValue.trim();
+            calc.output.value += calcValue;
             break;
         case "x":
-            calc.output.value += "*";
+            calc.output.value += " * ";
             break;
         case "divide":
-            calc.output.value += "/";
+            calc.output.value += " / ";
             break;
         case "C":
             calc.reset();  //clears the output
             break;
         case "=":
             calc.output.value = math.eval(calc.output.value);
+            break;
+        default:
+            calc.output.value += calcValue.trim();
             break;
     }
 };
